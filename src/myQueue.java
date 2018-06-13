@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class myQueue<Q> {
 	
 		private ArrayDeque<Q> deq;
+		private int front = 0;
+		private int back = -1;
 		
 		public myQueue() {
 			deq = new ArrayDeque<Q>();
@@ -11,8 +13,19 @@ public class myQueue<Q> {
 		
 		public boolean enq(Q q)
 	    {
-	        return deq.add(q);
+			back++;
+			return deq.add(q);
+	        
 	    }
+		
+		public Q deqq() throws Exception{
+			if(isEmpty())throw new Exception("Queue is empty");
+			else {	       
+				front--;
+				deq.remove(front);
+			}
+			return null;
+			}
 
 	   
 	    public void clear()
@@ -38,6 +51,10 @@ public class myQueue<Q> {
 	    public String toString()
 	    {
 	        return deq.toString();
+	    }
+	    
+	    public boolean isEmpty() {
+	        return size() == 0;
 	    }
 
 }

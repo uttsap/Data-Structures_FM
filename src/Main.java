@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		 myStack<Integer> st = new myStack<>();
 		 myQueue<Integer> que = new myQueue<>();
 		 
@@ -33,11 +33,13 @@ public class Main {
 			// System.out.println("Stack Length: " + st.size());
 			 
 			 //que.enq(a);
+			 que.deqq();
 			 System.out.println("My Queue:" +que);
 			 System.out.println("Queue Length: " + que.size());
 			 System.out.println("Peek: " + que.peek());
-			 que.clear();
-			 que.remove(2);
+			 //que.clear();
+			 //que.remove(2);
+			 
 		 
 
 	}
